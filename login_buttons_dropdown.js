@@ -53,6 +53,14 @@
         return loginButtonsSession.get('dropdownVisible');
     };
 
+    Template._loginButtonsLoggedInDropdown.services = function() {
+        return Accounts._loginButtons.getLoginServices();
+    };
+
+    Template._loginButtonsLoggedInDropdown.isPasswordService = function() {
+        return this.name === 'password';
+    };
+
     Template._loginButtonsLoggedInDropdownActions.allowChangingPassword = function() {
         // it would be more correct to check whether the user has a password set,
         // but in order to do that we'd have to send more data down to the client,

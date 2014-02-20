@@ -8,6 +8,13 @@
       <b class="caret"></b>
     </a>
     <div class="dropdown-menu col-sm-3">
+      {{#each services}}
+        {{#if isPasswordService}}
+          {{> _loginButtonsLoggedOutPasswordServiceSeparator}}
+        {{else}}
+          {{> _loginButtonsLoggedOutSingleLoginButton}}
+        {{/if}}
+      {{/each}}
       {{#if inMessageOnlyFlow}}
         {{> _loginButtonsMessages}}
       {{else}}
